@@ -7,12 +7,10 @@ CHECK_BIN "pdnssec"
 
 MSG "Configuring PowerDNS..."
 
-# Make sure config file exists.
-touch /etc/powerdns/superslave-config.conf
-
 # Create zones directory if it doesn't exist.
 [[ -d /zones ]] || mkdir -p /zones
 chown -R pdns:pdns /zones
+touch /zones/named.conf
 
 # Recreate list of Supermasters.
 [[ -e /etc/powerdns/supermasters.conf ]] && rm -f /etc/powerdns/supermasters.conf

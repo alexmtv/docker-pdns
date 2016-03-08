@@ -11,6 +11,7 @@ RUN apt-get -qq update && \
 EXPOSE 53
 
 ADD files/bindbackend.conf /etc/powerdns/bindbackend.conf
+ADD files/pdns.local.conf /etc/powerdns/pdns.d/pdns.local.conf
 
 VOLUME ["/zones"]
 
