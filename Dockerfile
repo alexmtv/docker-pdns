@@ -12,6 +12,8 @@ EXPOSE 53
 
 ADD files/bindbackend.conf /etc/powerdns/bindbackend.conf
 
+VOLUME ["/zones"]
+
 ## Add startup script.
 ADD bin/init.sh /opt/chambana/bin/init.sh
 RUN chmod 0755 /opt/chambana/bin/init.sh

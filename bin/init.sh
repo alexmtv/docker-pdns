@@ -11,7 +11,8 @@ MSG "Configuring PowerDNS..."
 touch /etc/powerdns/superslave-config.conf
 
 # Create zones directory if it doesn't exist.
-[[ -d /etc/powerdns/zones ]] || mkdir -p /etc/powerdns/zones
+[[ -d /zones ]] || mkdir -p /zones
+chown -R pdns:pdns /zones
 
 # Recreate list of Supermasters.
 [[ -e /etc/powerdns/supermasters.conf ]] && rm -f /etc/powerdns/supermasters.conf
