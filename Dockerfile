@@ -16,7 +16,7 @@ ADD files/pdns.local.conf /etc/powerdns/pdns.d/pdns.local.conf
 VOLUME ["/zones"]
 
 ## Add startup script.
-ADD bin/init.sh /opt/chambana/bin/init.sh
-RUN chmod 0755 /opt/chambana/bin/init.sh
+ADD bin/init.sh /app/bin/init.sh
+RUN chmod 0755 /app/bin/init.sh
 
-CMD ["/opt/chambana/bin/init.sh"]
+CMD ["/app/bin/init.sh"]
