@@ -14,7 +14,7 @@ touch /zones/named.conf
 
 # Recreate list of Supermasters.
 [[ -e /etc/powerdns/supermasters.conf ]] && rm -f /etc/powerdns/supermasters.conf
-for i in $SUPERMASTERS; do
+for i in $PDNS_SUPERMASTERS; do
   echo -e "${i/:/ }\n" >> /etc/powerdns/supermasters.conf
 done
 

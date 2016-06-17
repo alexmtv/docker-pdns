@@ -2,7 +2,7 @@ FROM chambana/base:latest
 
 MAINTAINER Josh King <jking@chambana.net>
 
-ENV SUPERMASTERS ""
+ENV PDNS_SUPERMASTERS ""
 
 RUN apt-get -qq update && \
 	apt-get install -y --no-install-recommends pdns-server && \
