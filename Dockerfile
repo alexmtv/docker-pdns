@@ -16,7 +16,8 @@ ADD files/pdns.local.conf /etc/powerdns/pdns.d/pdns.local.conf
 VOLUME ["/zones"]
 
 ## Add startup script.
-ADD bin/init.sh /app/bin/init.sh
-RUN chmod 0755 /app/bin/init.sh
+ADD bin/run.sh /app/bin/run.sh
+RUN chmod 0755 /app/bin/run.sh
 
-CMD ["/app/bin/init.sh"]
+ENTRYPOINT ["/app/bin/run.sh"]
+CMD ["pdns_server", "--daemon=no"]

@@ -19,4 +19,4 @@ for i in $PDNS_SUPERMASTERS; do
 done
 
 MSG "Starting PowerDNS."
-pdns_server --daemon=no
+exec "$@"
